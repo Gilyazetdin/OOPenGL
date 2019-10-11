@@ -59,10 +59,10 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="vertexShader.glsl">
-      <Filter>Исходные файлы</Filter>
+      <Filter>Файлы ресурсов</Filter>
     </None>
     <None Include="fragmentShader.glsl">
-      <Filter>Исходные файлы</Filter>
+      <Filter>Файлы ресурсов</Filter>
     </None>
   </ItemGroup>
 </Project>
