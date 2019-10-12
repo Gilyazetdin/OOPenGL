@@ -10,6 +10,8 @@
 #include "Window.h"
 #include "Shader.h"
 #include "Run.h"
+#include "Buffer.h"
+#include "GlArray.h"
 
 void inputSwitch(Window& window)
 {
@@ -50,25 +52,19 @@ int main()
 	};
 	
 	run.setInput(inputSwitch);
-	GLuint VAO;
-	glGenVertexArrays(1, &VAO);
-	GLuint VBO;
-	glGenBuffers(1, &VBO);
-	GLuint EBO;
-	glGenBuffers(1, &EBO);
+	
+	GlArray* VAO = new GlArray();
+	Buffer* VBO = new Buffer();
+	Buffer* IBO = new Buffer();
+
 	while (!window.isClosing())
 	{
 		run.callInput();
 
+		VAO->bindVertices(*VBO, vertices, GL_STATIC_DRAW);
+		VAO->bindIndices(*IBO, indices, GL_STATIC_DRAW);
 		
-
-		glBindVertexArray(VAO);
-		glBindBuffer(GL_ARRAY_BUFFER, VBO);
-		glBufferData(GL_ARRAY_BUFFER, sizeof(vertices), vertices, GL_STATIC_DRAW);
 		
-		glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, EBO);
-		glBufferData(GL_ELEMENT_ARRAY_BUFFER, sizeof(indices), indices, GL_STATIC_DRAW);
-
 		glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 6 * sizeof(GLfloat), (GLvoid*)0);
 		glEnableVertexAttribArray(0);
 		
@@ -83,13 +79,13 @@ int main()
 		run.useProgram();
 	
 
-		glBindVertexArray(VAO); // seeing as we only have a single VAO there's no need to bind it every time, but we'll do so to keep things a bit more organized
+		glBindVertexArray(VAO->getArrayObject()); // seeing as we only have a single VAO there's no need to bind it every time, but we'll do so to keep things a bit more organized
 		glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, 0);
 
 		glfwSwapBuffers(window.glfw_window);
 		glfwPollEvents();
 	}
-
+	delete VAO, VBO, IBO;
 	return 0;
 }
 

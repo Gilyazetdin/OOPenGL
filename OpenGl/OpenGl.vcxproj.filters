@@ -33,7 +33,10 @@
     <ClCompile Include="Run.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="Vertex.cpp">
+    <ClCompile Include="Buffer.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="GlArray.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
   </ItemGroup>
@@ -53,7 +56,10 @@
     <ClInclude Include="Run.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
-    <ClInclude Include="Vertex.h">
+    <ClInclude Include="Buffer.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="GlArray.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
   </ItemGroup>

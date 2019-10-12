@@ -128,20 +128,22 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Buffer.cpp" />
     <ClCompile Include="glad.c" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="ReadHelper.cpp" />
     <ClCompile Include="Run.cpp" />
     <ClCompile Include="Shader.cpp" />
-    <ClCompile Include="Vertex.cpp" />
+    <ClCompile Include="GlArray.cpp" />
     <ClCompile Include="Window.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Buffer.h" />
     <ClInclude Include="config.h" />
     <ClInclude Include="ReadHelper.h" />
     <ClInclude Include="Run.h" />
     <ClInclude Include="Shader.h" />
-    <ClInclude Include="Vertex.h" />
+    <ClInclude Include="GlArray.h" />
     <ClInclude Include="Window.h" />
   </ItemGroup>
   <ItemGroup>
