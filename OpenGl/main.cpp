@@ -21,14 +21,6 @@ void inputSwitch(Window& window)
 	}
 }
 
-void addVertex(GLuint VAO, GLuint VBO)
-{
-
-}
-void addIndices()
-{
-
-}
 
 int main()
 {
